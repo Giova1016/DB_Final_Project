@@ -10,33 +10,55 @@ CREATE TABLE Usuario (
 CREATE TABLE Cliente (
     Id INTEGER PRIMARY KEY,
     FOREIGN KEY (Id) REFERENCES Usuario(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 CREATE TABLE Administrador (
     Id INTEGER PRIMARY KEY,
     FOREIGN KEY (Id) REFERENCES Usuario(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 CREATE TABLE "Dueño de Negocios" (
     Id INTEGER PRIMARY KEY,
     FOREIGN KEY (Id) REFERENCES Usuario(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 CREATE TABLE "Gerente de ventas" (
     Id INTEGER PRIMARY KEY,
     FOREIGN KEY (Id) REFERENCES Usuario(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 CREATE TABLE Negocio (
     Id INTEGER PRIMARY KEY AUTOINCREMENT,
     DueñoId INTEGER,
     FOREIGN KEY (DueñoId) REFERENCES "Dueño de Negocios"(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+);
+
+CREATE TABLE Inventario(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    NegocioId INTEGER NOT NULL,
+    Descripcion TEXT,
+    Cantidad INTEGER,
+    FOREIGN KEY (NegocioId) REFERENCES Negocio(Id)
+    ON UPDATE CASCADE
+    On DELETE SET NULL
 );
 
 CREATE TABLE Bebidas (
     Id INTEGER PRIMARY KEY AUTOINCREMENT,
     NegocioId INTEGER,
-    FOREIGN KEY (NegocioId) REFERENCES Negocio(Id)
+    FOREIGN KEY (NegocioId) REFERENCES Negocio(Id) 
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 CREATE TABLE Sabores (
@@ -44,6 +66,8 @@ CREATE TABLE Sabores (
     BebidaId INTEGER,
     Nombre TEXT,
     FOREIGN KEY (BebidaId) REFERENCES Bebidas(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 CREATE TABLE Frutas (
@@ -51,6 +75,8 @@ CREATE TABLE Frutas (
     BebidaId INTEGER,
     Nombre TEXT,
     FOREIGN KEY (BebidaId) REFERENCES Bebidas(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 -- Create relationships
@@ -58,24 +84,48 @@ CREATE TABLE Visita (
     ClienteId INTEGER,
     NegocioId INTEGER,
     PRIMARY KEY (ClienteId, NegocioId),
-    FOREIGN KEY (ClienteId) REFERENCES Cliente(Id),
+    FOREIGN KEY (ClienteId) REFERENCES Cliente(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL, 
     FOREIGN KEY (NegocioId) REFERENCES Negocio(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 CREATE TABLE Tiene (
     DueñoId INTEGER,
     NegocioId INTEGER,
     PRIMARY KEY (DueñoId, NegocioId),
-    FOREIGN KEY (DueñoId) REFERENCES "Dueño de Negocios"(Id),
+    FOREIGN KEY (DueñoId) REFERENCES "Dueño de Negocios"(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
     FOREIGN KEY (NegocioId) REFERENCES Negocio(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+);
+
+CREATE TABLE Posee(
+    NegocioId INTEGER,
+    InventarioId INTEGER,
+    Primary KEY (NegocioId, InventarioId),
+    FOREIGN KEY (NegocioId) REFERENCES Negocio(Id) 
+    ON UPDATE CASCADE 
+    ON DELETE SET NULL,
+    FOREIGN KEY (InventarioId) REFERENCES Inventario(Id) 
+    ON UPDATE CASCADE 
+    ON DELETE SET NULL
 );
 
 CREATE TABLE Promociona (
     GerenteId INTEGER,
     NegocioId INTEGER,
     PRIMARY KEY (GerenteId, NegocioId),
-    FOREIGN KEY (GerenteId) REFERENCES "Gerente de ventas"(Id),
+    FOREIGN KEY (GerenteId) REFERENCES "Gerente de ventas"(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
     FOREIGN KEY (NegocioId) REFERENCES Negocio(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 CREATE TABLE Accesar (
@@ -83,4 +133,6 @@ CREATE TABLE Accesar (
     TipoUsuario TEXT,
     PRIMARY KEY (UsuarioId, TipoUsuario),
     FOREIGN KEY (UsuarioId) REFERENCES Usuario(Id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
