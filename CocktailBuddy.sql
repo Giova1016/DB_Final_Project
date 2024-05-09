@@ -29,7 +29,7 @@ CREATE TABLE "Dueño de Negocios" (
     ON DELETE SET NULL
 );
 
-CREATE TABLE "Gerente de ventas" (
+CREATE TABLE "Gerente de Ventas" (
     Id INTEGER PRIMARY KEY,
     FOREIGN KEY (Id) REFERENCES Usuario(Id)
     ON UPDATE CASCADE
