@@ -4,6 +4,7 @@ CREATE TABLE Usuario (
     Nombre TEXT,
     FechaNac DATE,
     Direccion TEXT,
+    Email TEXT UNIQUE,
     Password TEXT
 );
 
