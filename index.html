@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMP 4018 Final Project</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <h1>Database Project</h1>
+
+    <div id="data-container">
+        <!-- This container will be populated with data from the database -->
+    </div>
+
+    <div id="form-container">
+        <h2>Add New Business</h2>
+        <form id="business-form">
+            <label for="business-name">Business Name:</label>
+            <input type="text" id="business-name" name="business-name" required>
+
+            <label for="owner-id">Owner ID:</label>
+            <input type="text" id="owner-id" name="owner-id" required>
+
+            <button type="submit">Add Business</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
