@@ -1,5 +1,5 @@
 -- Insert Data into the tables
-INSERT INTO Usuario (Id, Nombre,FechaNac,Direccion,Email,Password)
+INSERT INTO Usuario (Id, NombreC,FechaNac,Direccion,Email,Password)
 VALUES
   (1, "Ferris Fernandez","1993-02-12","P.O. Box 553, 3869 Cras Ave","elementum.purus@google.edu","JSK59PNR6DK")
   (2, "Yvette Guy","1986-11-15","Ap #691-3984 Enim St.","pede.malesuada@outlook.com","WSK74UMP5IQ"),
