@@ -42,7 +42,7 @@ VALUES
   (33, "Athena Harding","2000-07-26","Ap #302-5942 Velit Avenue","non@yahoo.edu","NXG32CUM4HV"),
   (34, "Dawn Galloway","1987-06-28","2025 Et Rd.","fermentum@icloud.couk","WMG49BAE1JM"),
   (35, "Stacey Ferrell","1993-06-12","140-3487 Iaculis St.","netus.et@icloud.ca","FPU20GYN7NT"),
-  (36, "Cody Bass","1988-07-188","P.O. Box 538, 2194 Pulvinar Street","nisi.nibh@yahoo.net","OWW74EMB6RE"),
+  (36, "Cody Bass","1988-07-18","P.O. Box 538, 2194 Pulvinar Street","nisi.nibh@yahoo.net","OWW74EMB6RE"),
   (37, "Hillary Lindsay","1996-04-07","382-6427 Non Av.","erat.semper.rutrum@google.ca","ZKC89GSB1GT"),
   (38, "Cassidy Carver","1998-11-06","P.O. Box 690, 4303 Suspendisse Ave","a@icloud.org","NZO21IDR8KC"),
   (39, "Molly Scott","1994-08-02","530-1847 Et Rd.","cursus.non@outlook.com","YIK67VZY3ZW"),
@@ -51,7 +51,7 @@ INSERT INTO Usuario (Id, Nombre,FechaNac,Direccion,Email,Password)
 VALUES
   (41, "Jaquelyn Robertson","1974-05-23","Ap #340-9579 Vestibulum. St.","eget.magna.suspendisse@icloud.edu","TAU32PWR8SX"),
   (42, "Duncan Mcconnell","1976-07-01","P.O. Box 248, 127 Nisl Street","purus@protonmail.com","NCG68YWH4KG"),
-  (43, "Ignatius Alvarado","200-10-250","307-7064 Sem Rd.","pretium.aliquet@icloud.ca","MLD38ZJD4YU"),
+  (43, "Ignatius Alvarado","2000-10-25","307-7064 Sem Rd.","pretium.aliquet@icloud.ca","MLD38ZJD4YU"),
   (44, "Dustin Marquez","1973-12-01","741-984 Nec Road","dis@icloud.com","SPD84JHK6TB"),
   (45, "Ulla Key","2000-05-31","444-547 Auctor. Road","vivamus.molestie@outlook.org","GSW61BKP5PX"),
   (46, "Abdul Blair","1989-07-26","7758 Dapibus Street","in.condimentum@icloud.org","ONE42VSX2HC"),
