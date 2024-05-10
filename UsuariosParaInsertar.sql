@@ -1,7 +1,7 @@
 -- Insert Data into the tables
 INSERT INTO Usuario (Id, NombreC,FechaNac,Direccion,Email,Password)
 VALUES
-  (1, "Ferris Fernandez","1993-02-12","P.O. Box 553, 3869 Cras Ave","elementum.purus@google.edu","JSK59PNR6DK")
+  (1, "Ferris Fernandez","1993-02-12","P.O. Box 553, 3869 Cras Ave","elementum.purus@google.edu","JSK59PNR6DK"),
   (2, "Yvette Guy","1986-11-15","Ap #691-3984 Enim St.","pede.malesuada@outlook.com","WSK74UMP5IQ"),
   (3, "Yasir Simmons","1998-08-01","P.O. Box 269, 7055 Fringilla Avenue","malesuada.fames@protonmail.couk","JQF45SXS7LG"),
   (4, "Elizabeth Davis","1975-05-24","Ap #119-2832 Duis St.","pellentesque.sed@outlook.edu","FPF99NRO2IR"),
