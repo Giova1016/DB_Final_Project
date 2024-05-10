@@ -4,34 +4,38 @@ CREATE TABLE Usuario (
     Nombre TEXT,
     FechaNac DATE,
     Direccion TEXT,
-    Email TEXT UNIQUE,
+    Email VARCHAR(255) UNIQUE,
     Password TEXT
 );
 
 CREATE TABLE Cliente (
-    Id INTEGER PRIMARY KEY,
-    FOREIGN KEY (Id) REFERENCES Usuario(Id)
+    ClienteId INTEGER PRIMARY KEY,
+    UsuarioId INTEGER,
+    FOREIGN KEY (UsuarioId) REFERENCES Usuario(Id)
     ON UPDATE CASCADE
     ON DELETE SET NULL
 );
 
 CREATE TABLE Administrador (
     Id INTEGER PRIMARY KEY,
-    FOREIGN KEY (Id) REFERENCES Usuario(Id)
+    UsuarioId INTEGER,
+    FOREIGN KEY (UsuarioId) REFERENCES Usuario(Id)
     ON UPDATE CASCADE
     ON DELETE SET NULL
 );
 
-CREATE TABLE "Dueño de Negocios" (
+CREATE TABLE `Dueño de Negocios` (
     Id INTEGER PRIMARY KEY,
-    FOREIGN KEY (Id) REFERENCES Usuario(Id)
+    UsuarioId INTEGER,
+    FOREIGN KEY (UsuarioId) REFERENCES Usuario(Id)
     ON UPDATE CASCADE
     ON DELETE SET NULL
 );
 
-CREATE TABLE "Gerente de Ventas" (
+CREATE TABLE `Gerente de Ventas` (
     Id INTEGER PRIMARY KEY,
-    FOREIGN KEY (Id) REFERENCES Usuario(Id)
+    UsuarioId INTEGER,
+    FOREIGN KEY (UsuarioId) REFERENCES Usuario(Id)
     ON UPDATE CASCADE
     ON DELETE SET NULL
 );
@@ -39,7 +43,7 @@ CREATE TABLE "Gerente de Ventas" (
 CREATE TABLE Negocio (
     Id INTEGER PRIMARY KEY AUTO_INCREMENT,
     DueñoId INTEGER,
-    FOREIGN KEY (DueñoId) REFERENCES "Dueño de Negocios"(Id)
+    FOREIGN KEY (DueñoId) REFERENCES `Dueño de Negocios`(Id)
     ON UPDATE CASCADE
     ON DELETE SET NULL
 );
@@ -51,7 +55,7 @@ CREATE TABLE Inventario(
     Cantidad INTEGER,
     FOREIGN KEY (NegocioId) REFERENCES Negocio(Id)
     ON UPDATE CASCADE
-    On DELETE SET NULL
+    ON DELETE SET NULL
 );
 
 CREATE TABLE Bebidas (
@@ -85,7 +89,7 @@ CREATE TABLE Visita (
     ClienteId INTEGER,
     NegocioId INTEGER,
     PRIMARY KEY (ClienteId, NegocioId),
-    FOREIGN KEY (ClienteId) REFERENCES Cliente(Id)
+    FOREIGN KEY (ClienteId) REFERENCES Cliente(ClienteId)
     ON UPDATE CASCADE
     ON DELETE SET NULL, 
     FOREIGN KEY (NegocioId) REFERENCES Negocio(Id)
@@ -97,7 +101,7 @@ CREATE TABLE Tiene (
     DueñoId INTEGER,
     NegocioId INTEGER,
     PRIMARY KEY (DueñoId, NegocioId),
-    FOREIGN KEY (DueñoId) REFERENCES "Dueño de Negocios"(Id)
+    FOREIGN KEY (DueñoId) REFERENCES `Dueño de Negocios`(Id)
     ON UPDATE CASCADE
     ON DELETE SET NULL,
     FOREIGN KEY (NegocioId) REFERENCES Negocio(Id)
@@ -121,7 +125,7 @@ CREATE TABLE Promociona (
     GerenteId INTEGER,
     NegocioId INTEGER,
     PRIMARY KEY (GerenteId, NegocioId),
-    FOREIGN KEY (GerenteId) REFERENCES "Gerente de ventas"(Id)
+    FOREIGN KEY (GerenteId) REFERENCES `Gerente de Ventas`(Id)
     ON UPDATE CASCADE
     ON DELETE SET NULL,
     FOREIGN KEY (NegocioId) REFERENCES Negocio(Id)
