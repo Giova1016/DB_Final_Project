@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMP 4018 Final Project</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Select Database</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Database Project</h1>
 
-    <div id="data-container">
-        <!-- This container will be populated with data from the database -->
+<div class="container mt-5">
+    <h2>Select Database</h2>
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_users.php?database=usuario">Users</button></a>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_?.php?database=?">Database 2</button></a>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_?.php?database=?">Database 3</button>
+        </div>
     </div>
+</div>
 
-    <div id="form-container">
-        <h2>Add New Business</h2>
-        <form id="business-form">
-            <label for="business-name">Business Name:</label>
-            <input type="text" id="business-name" name="business-name" required>
+<!-- JavaScript to handle database selection -->
+<script>
+    function selectDatabase(database) {
+        // Redirect to the PHP script with the selected database name as a query parameter
+        window.location.href = "display_data.php?database=" + database;
+    }
+</script>
 
-            <label for="owner-id">Owner ID:</label>
-            <input type="text" id="owner-id" name="owner-id" required>
-
-            <button type="submit">Add Business</button>
-        </form>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
