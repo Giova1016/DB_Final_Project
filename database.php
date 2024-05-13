@@ -1,15 +1,15 @@
 <?php
-    $db_server = "localhost";
-    $db_user = "root";
-    $db_pass = "";
-    $db_name = "cocktailbuddydb";
-    $conn = "";
+    $server_name = "localhost:3306"; // or the IP address/hostname of your MySQL server
+    $username = "giovannirf"; // Replace with your username
+    $password = "password"; //replace with your password
+    // $db_name = "myDB"; // Replace with the name of the database being used
 
-    try{
-        $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
-    }
+    // Create Connection
+    $conn = new mysqli($server_name, $username, $password);
 
-    catch(mysqli_sql_exception) {
-        echo "Could not connect! <br>";
-    }
+    // Check Connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+    echo "Connected Successfully";
 ?>
