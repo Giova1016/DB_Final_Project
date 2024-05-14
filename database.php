@@ -1,7 +1,7 @@
 <?php
     $server_name = "localhost: serverIPaddress"; // or the IP address/hostname of your MySQL server
     $username = "username"; // Replace with your username
-    $password = "password"; //replace with your password
+    $password = "password"; // Replace with your password
     $db_name = "myDB"; // Replace with the name of the database being used
 
     // Create Connection

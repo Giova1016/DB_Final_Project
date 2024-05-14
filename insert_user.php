@@ -22,7 +22,7 @@
         <input type="text" name="email"><br>
         Password:<br>
         <input type="text" name="password"><br>
-        <input type="submit" name="submit" value="register">
+        <input type="submit" name="Insert" value="register">
     </form>
 </body>
 </html>
