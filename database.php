@@ -5,7 +5,7 @@
     $db_name = "myDB"; // Replace with the name of the database being used
 
     // Create Connection
-    $conn = mysqli_connect($server_name, $username, $password, $db);
+    $conn = mysqli_connect($server_name, $username, $password, $db_name);
 
     // Check Connection
     if ($conn->connect_error) {
