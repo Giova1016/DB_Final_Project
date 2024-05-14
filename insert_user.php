@@ -1,5 +1,5 @@
 <?php
-    include("database.php")
+    include("database.php");
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <h2>Insert New User</h2>
         Full Name:<br>
         <input type="text" name="name"><br>
@@ -36,14 +36,14 @@
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
         if(empty($name)){
-            echo "Please enter your Full name";
+            echo "Please enter your full name";
         }
         elseif(empty($birthday)){
-            echo "Please enter your birthday". "<br>";
-            echo "Format : YYYY-MM-DD";
+            echo "Please enter your birthday<br>";
+            echo "Format: YYYY-MM-DD";
         }
         elseif(empty($direction)){
-            echo "Please a direction";
+            echo "Please enter a direction";
         }
         elseif(empty($email)){
             echo "Please enter an email";
@@ -53,15 +53,17 @@
         }
         else{
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO usuario (NombreC, FechaNac, Direccion, Email, Password)
-                    VALUES ('$name', '$birthday', '$direction', ' $email', '$hash')";
-
+            $sql = "INSERT INTO usuario (NombreC, FechaNac, Direccion, Email, Password) VALUES (?, ?, ?, ?, ?)";
+            
             try{
-                mysqli_query($conn, $sql);
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, "sssss", $name, $birthday, $direction, $email, $hash);
+                mysqli_stmt_execute($stmt);
                 echo "You are now registered";
+                mysqli_stmt_close($stmt);
             }
-            catch(mysqli_sql_exception){
-                echo "That Email is taken";
+            catch(Exception $e){
+                echo "That email is taken";
             }
         }
     }
