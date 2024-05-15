@@ -10,10 +10,10 @@
 
     <h2>Choose a Predefined Query or Enter Your Own:</h2>
     <!-- Predefined query buttons -->
-    <div class="btn-containerquery"> <!-- Corrected class name -->
+    <div class="btn-containerquery"> 
         <button class="btn" onclick="submitQuery('SELECT DuenoNegocio.DueñoId, NombreC, FechaNac, Email, NombreNegocio, MenuBebidas FROM DuenoNegocio INNER JOIN Usuario ON DuenoNegocio.UsuarioId = Usuario.Id INNER JOIN Negocio ON DuenoNegocio.DueñoId = Negocio.DueñoId ORDER BY DuenoNegocio.DueñoId')">Usuarios que tienen Negocio</button>
         <button class="btn" onclick="submitQuery('SELECT Negocio.NegocioId, NombreNegocio, NombreBebida, Descuento FROM Negocio INNER JOIN Bebidas ON Negocio.NegocioId = Bebidas.NegocioId INNER JOIN Promociones ON Bebidas.BebidasId = Promociones.BebidasId')">Negocios que tienen ofertas en bebidas</button>
-        <button class="btn" onclick="submitQuery('SELECT * FROM table3')">Query 3</button>
+        <button class="btn" onclick="submitQuery('SELECT Negocio.NombreNegocio, Inventario.Descripcion, Inventario.Cantidad FROM Negocio INNER JOIN Inventario ON Negocio.NegocioId = Inventario.NegocioId;')">Inventario de Negocios</button>
     </div>
     
     <!-- Form for custom query -->
