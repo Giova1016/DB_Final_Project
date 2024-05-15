@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #4CAF50, #2196F3); /* Gradient background */
+    color: #ffffff; /* Text color */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+.githubref{
+    color: #ffffff
+}
+.Database{
+    color: #232323;
+}
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Box shadow for container */
+    margin: 50px auto;
+    max-width: 800px;
+    overflow: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ffffff; /* Button background color */
+    color: #333333; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #eeeeee; /* Button background color on hover */
+}
+
+.btn a {
+    color: inherit; /* Inherit text color from parent */
+    text-decoration: none;
+}
