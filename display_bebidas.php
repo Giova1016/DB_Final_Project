@@ -96,14 +96,14 @@ if (isset($_GET['edit'])) {
 
     <h2 id="form"><?php echo isset($bebidas) ? "Edit Bebidas" : "Add New Bebidas"; ?></h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <input type="hidden" name="bebidasId" value="<?php echo isset($bebidas) ? $bebidas['BebidasId'] : ''; ?>">
+        <input type="hidden" name="bebidasId" value="<?php echo isset($bebidas) ? $bebidas['BebidasId'] : ''; ?>"class="form-control">
         Negocio ID:<br>
-        <input type="text" name="negocioId" value="<?php echo isset($bebidas) ? $bebidas['NegocioId'] : ''; ?>"><br>
+        <input type="text" name="negocioId" value="<?php echo isset($bebidas) ? $bebidas['NegocioId'] : ''; ?>"class="form-control"><br>
         Nombre Bebida:<br>
-        <input type="text" name="nombreBebida" value="<?php echo isset($bebidas) ? $bebidas['NombreBebida'] : ''; ?>"><br>
+        <input type="text" name="nombreBebida" value="<?php echo isset($bebidas) ? $bebidas['NombreBebida'] : ''; ?>"class="form-control"><br>
         Descripcion:<br>
-        <input type="text" name="descripcion" value="<?php echo isset($bebidas) ? $bebidas['Descripcion'] : ''; ?>"><br>
-        <input type="submit" value="<?php echo isset($bebidas) ? "Update" : "Add"; ?>">
+        <input type="text" name="descripcion" value="<?php echo isset($bebidas) ? $bebidas['Descripcion'] : ''; ?>"class="form-control"><br>
+        <input type="submit" value="<?php echo isset($bebidas) ? "Update" : "Add"; ?>"class="btn btn-primary mt-2">
     </form>
 </div>
 

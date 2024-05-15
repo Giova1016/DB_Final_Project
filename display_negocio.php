@@ -86,27 +86,27 @@ if (isset($_GET['edit'])) {
                 }
 
                 // Close connection
-                $conn->close();
+                
             } else {
                 echo "No database selected.";
             }
+            
             ?>
         </div>
-    </div>
-
-    <h2 id="form"><?php echo isset($negocio) ? "Edit Negocio" : "Add New Negocio"; ?></h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <input type="hidden" name="negocioId" value="<?php echo isset($negocio) ? $negocio['NegocioId'] : ''; ?>">
-        Dueño ID:<br>
-        <input type="text" name="duenoId" value="<?php echo isset($negocio) ? $negocio['DueñoId'] : ''; ?>"><br>
-        Nombre Negocio:<br>
-<input type="text" name="nombreNegocio" value="<?php echo isset($negocio) ? $negocio['NombreNegocio'] : ''; ?>"><br>
-Menu Bebidas:<br>
-<input type="text" name="menuBebidas" value="<?php echo isset($negocio) ? $negocio['MenuBebidas'] : ''; ?>"><br>
-<input type="submit" value="<?php echo isset($negocio) ? "Update" : "Add"; ?>">
-</form>
-</div>
-</div>
+        </div>
+    
+     <h2 id="form"><?php echo isset($negocio) ? "Edit Negocio" : "Add New Negocio"; ?></h2>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <input type="hidden" name="negocioId" value="<?php echo isset($negocio) ? $negocio['NegocioId'] : ''; ?>">
+            Dueño ID:<br>
+            <input type="text" name="duenoId" value="<?php echo isset($negocio) ? $negocio['DueñoId'] : ''; ?>" class="form-control"><br>
+            Nombre Negocio:<br>
+            <input type="text" name="nombreNegocio" value="<?php echo isset($negocio) ? $negocio['NombreNegocio'] : ''; ?>" class="form-control"><br>
+            Menu Bebidas:<br>
+            <input type="text" name="menuBebidas" value="<?php echo isset($negocio) ? $negocio['MenuBebidas'] : ''; ?>" class="form-control"><br>
+            <input type="submit" value="<?php echo isset($cliente) ? "Update" : "Add"; ?>" class="btn btn-primary mt-2">        </form>
+    
+   
 </div>
 
 </body>

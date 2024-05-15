@@ -99,16 +99,16 @@ if (isset($_GET['edit'])) {
 
     <h2 id="form"><?php echo isset($usuario) ? "Edit User" : "Add New User"; ?></h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <input type="hidden" name="userId" value="<?php echo isset($usuario) ? $usuario['Id'] : ''; ?>">
+        <input type="hidden" name="userId" value="<?php echo isset($usuario) ? $usuario['Id'] : ''; ?>" class="form-control">
         Full Name:<br>
-        <input type="text" name="name" value="<?php echo isset($usuario) ? $usuario['NombreC'] : ''; ?>"><br>
+        <input type="text" name="name" value="<?php echo isset($usuario) ? $usuario['NombreC'] : ''; ?>" class="form-control"><br>
         Birth Date:<br>
-        <input type="text" name="birthday" value="<?php echo isset($usuario) ? $usuario['FechaNac'] : ''; ?>"><br>
+        <input type="text" name="birthday" value="<?php echo isset($usuario) ? $usuario['FechaNac'] : ''; ?>" class="form-control"><br>
         Direction:<br>
-        <input type="text" name="direction" value="<?php echo isset($usuario) ? $usuario['Direccion'] : ''; ?>"><br>
+        <input type="text" name="direction" value="<?php echo isset($usuario) ? $usuario['Direccion'] : ''; ?>" class="form-control"><br>
         Email:<br>
-        <input type="text" name="email" value="<?php echo isset($usuario) ? $usuario['Email'] : ''; ?>"><br>
-        <input type="submit" value="<?php echo isset($usuario) ? "Update" : "Add"; ?>">
+        <input type="text" name="email" value="<?php echo isset($usuario) ? $usuario['Email'] : ''; ?>" class="form-control"><br>
+        <input type="submit" value="<?php echo isset($usuario) ? "Update" : "Add"; ?>"class="btn btn-primary mt-2">
     </form>
 </div>
 
