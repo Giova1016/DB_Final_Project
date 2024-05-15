@@ -18,24 +18,47 @@
     <h2>Select Database</h2>
     <div class="row mt-3">
         <div class="col-md-4">
-            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_users.php?database=usuario">Users</button></a>
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_users.php?database=usuario">Users</a></button>
         </div>
         <div class="col-md-4">
-            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_negocios.php?database=negocio">Database 2</button></a>
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_negocio.php?database=negocio">Negocio</button></a>
         </div>
         <div class="col-md-4">
-            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_?.php?database=?">Database 3</button>
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_bebidas.php?database=bebidas">Bebidas</a></button>
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_clientes.php?database=cliente">Clientes</a></button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_duenonegocio.php?database=duenoNegocio">DueñoNegocio</a></button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_frutas.php?database=frutas">Frutas</a></button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_gerentedeventas.php?database=gerenteventas">Gerente de Ventas</a></button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_inventario.php?database=inventario">Inventario</a></button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_promociones.php?database=promociones">Promociones</a></button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_sabores.php?database=sabores">Sabores</a></button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-lg btn-block" style="background-color: aquamarine;"><a href="display_sirve.php?database=sirve">Sirve</a></button>
+        </div>
+        <!-- Add more buttons for other tables as needed -->
+    </div>
 </div>
-
-<!-- JavaScript to handle database selection -->
-<script>
-    function selectDatabase(database) {
-        // Redirect to the PHP script with the selected database name as a query parameter
-        window.location.href = "display_data.php?database=" + database;
-    }
-</script>
 
 </body>
 </html>
