@@ -1,7 +1,7 @@
 <?php
 include("database.php");
 
-// Handle form submission for adding/editing DueñoNegocio
+// Handle form submission for adding/editing DuenoNegocio
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuarioId = filter_input(INPUT_POST, "usuarioId", FILTER_SANITIZE_NUMBER_INT);
     $duenoId = filter_input(INPUT_POST, "duenoId", FILTER_SANITIZE_NUMBER_INT);
@@ -10,13 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Please fill all the fields.";
     } else {
         if (empty($duenoId)) {
-            // Add new DueñoNegocio
-            $sql = "INSERT INTO DueñoNegocio (UsuarioId) VALUES (?)";
+            // Add new DuenoNegocio
+            $sql = "INSERT INTO DuenoNegocio (UsuarioId) VALUES (?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("i", $usuarioId);
         } else {
-            // Update existing DueñoNegocio
-            $sql = "UPDATE DueñoNegocio SET UsuarioId = ? WHERE DueñoId = ?";
+            // Update existing DuenoNegocio
+            $sql = "UPDATE DuenoNegocio SET UsuarioId = ? WHERE DueñoId = ?";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("ii", $usuarioId, $duenoId);
         }
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $dueno = null;
 if (isset($_GET['edit'])) {
     $duenoId = $_GET['edit'];
-    $sql = "SELECT * FROM DueñoNegocio WHERE DueñoId = ?";
+    $sql = "SELECT * FROM DuenoNegocio WHERE DueñoId = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $duenoId);
     $stmt->execute();
@@ -50,18 +50,19 @@ if (isset($_GET['edit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display DueñoNegocio</title>
+    <title>Display DuenoNegocio</title>
+    <link href="styles.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
 <div class="container mt-5">
-    <h2>DueñoNegocios</h2>
+    <h2>DuenoNegocios</h2>
     <div class="row mt-3">
         <div class="col">
             <?php
-            // SQL query to retrieve DueñoNegocio data
-            $sql = "SELECT * FROM DueñoNegocio";
+            // SQL query to retrieve DuenoNegocio data
+            $sql = "SELECT * FROM DuenoNegocio";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -81,7 +82,7 @@ if (isset($_GET['edit'])) {
         </div>
     </div>
 
-    <h2 id="form"><?php echo isset($dueno) ? "Edit DueñoNegocio" : "Add New DueñoNegocio"; ?></h2>
+    <h2 id="form"><?php echo isset($dueno) ? "Edit DuenoNegocio" : "Add New DuenoNegocio"; ?></h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <input type="hidden" name="duenoId" value="<?php echo isset($dueno) ? $dueno['DueñoId'] : ''; ?>">
         Usuario ID:<br>
