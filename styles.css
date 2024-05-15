@@ -29,7 +29,7 @@ body {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px;
-    background-color: #ffffff; /* Button background color */
+    background-color: #2ce13eea; /* Button background color */
     color: #333333; /* Button text color */
     border: none;
     border-radius: 5px;
@@ -44,4 +44,20 @@ body {
 .btn a {
     color: inherit; /* Inherit text color from parent */
     text-decoration: none;
+}
+.btn-containerquery {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+
+}
+textarea {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+input[type="submit"] {
+    display: block; 
+    margin: 0 auto; 
 }
