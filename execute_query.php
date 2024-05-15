@@ -16,7 +16,7 @@
         $query = $_POST["query"];
 
         // Check if query contains restricted keywords
-        if (stripos($query, "password") !== false || stripos($query, "*") !== false) {
+        if (stripos($query, "Usuario") !== false && stripos($query, "*") !== false || stripos($query, "password") !== false && stripos($query, "Usuario") !== false) {
             echo "You do not have permission to execute this query.";
         } else {
             // Execute the query
