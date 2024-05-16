@@ -85,20 +85,17 @@ if (isset($_GET['edit'])) {
         </div>
     </div>
 
-   
-        <h2 id="form"><?php echo isset($sirve) ? "Edit Sirve" : "Add New Sirve"; ?></h2>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <input type="hidden" name="sirveId" value="<?php echo isset($sirve) ? $sirve['SirveId'] : ''; ?>">
-            Bebida ID:<br>
-            <input type="text" name="bebidaId" value="<?php echo isset($sirve) ? $sirve['BebidaId'] : ''; ?>" class="form-control"><br>
-            Negocio ID:<br>
-            <input type="text" name="negocioId" value="<?php echo isset($sirve) ? $sirve['NegocioId'] : ''; ?>" class="form-control"><br>
-            Descripcion:<br>
-            <input type="text" name="descripcion" value="<?php echo isset($sirve) ? $sirve['Descripcion'] : ''; ?>" class="form-control"><br>
-            <input type="submit" value="<?php echo isset($sirve) ? "Update" : "Add"; ?>" class="btn btn-primary mt-2">
-        </form>
-   
-
+    <h2 id="form"><?php echo isset($sirve) ? "Edit Sirve" : "Add New Sirve"; ?></h2>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <input type="hidden" name="sirveId" value="<?php echo isset($sirve) ? $sirve['SirveId'] : ''; ?>">
+        Bebida ID:<br>
+        <input type="text" name="bebidaId" value="<?php echo isset($sirve) ? $sirve['BebidaId'] : ''; ?>" class="form-control"><br>
+        Negocio ID:<br>
+        <input type="text" name="negocioId" value="<?php echo isset($sirve) ? $sirve['NegocioId'] : ''; ?>" class="form-control"><br>
+        Descripcion:<br>
+        <input type="text" name="descripcion" value="<?php echo isset($sirve) ? $sirve['Descripcion'] : ''; ?>" class="form-control"><br>
+        <input type="submit" value="<?php echo isset($sirve) ? "Update" : "Add"; ?>" class="btn btn-primary mt-2">
+    </form>
 </div>
 
 </body>
