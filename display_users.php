@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $usuario = null;
 if (isset($_GET['edit'])) {
     $userId = $_GET['edit'];
-    $sql = "SELECT * FROM Usuario WHERE Id = ?";
+    $sql = "SELECT NombreC, FechaNac, Direccion, Email FROM Usuario WHERE Id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $userId);
     $stmt->execute();
@@ -108,6 +108,8 @@ if (isset($_GET['edit'])) {
         <input type="text" name="direction" value="<?php echo isset($usuario) ? $usuario['Direccion'] : ''; ?>" class="form-control"><br>
         Email:<br>
         <input type="text" name="email" value="<?php echo isset($usuario) ? $usuario['Email'] : ''; ?>" class="form-control"><br>
+        Password:<br>
+        <input type="text" name="password" value="<?php echo isset($usuario) ? $usuario['Password'] : ''; ?>" class="form-control"><br>
         <input type="submit" value="<?php echo isset($usuario) ? "Update" : "Add"; ?>"class="btn btn-primary mt-2">
     </form>
 </div>
