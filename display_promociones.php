@@ -5,7 +5,7 @@ include("database.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $negocioId = filter_input(INPUT_POST, "negocioId", FILTER_SANITIZE_NUMBER_INT);
     $bebidasId = filter_input(INPUT_POST, "bebidasId", FILTER_SANITIZE_NUMBER_INT);
-    $descuento = filter_input(INPUT_POST, "descuento", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    $descuento = filter_input(INPUT_POST, "descuento", FILTER_SANITIZE_SPECIAL_CHARS);
     $promocionesId = filter_input(INPUT_POST, "promocionesId", FILTER_SANITIZE_NUMBER_INT);
 
     if (empty($negocioId) || empty($bebidasId) || empty($descuento)) {
