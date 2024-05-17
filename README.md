@@ -1,6 +1,6 @@
 # Database Final Project
 
-This project includes the HTML and PHP files with the code to the website found in the [csmath.uprm.edu](https://csmath.uprm.edu/comp4018.php) website.
+This project includes the HTML and PHP files with the code to the website found in the [csmath.uprm.edu](https://csmath.uprm.edu/~GioRoman/DB_Final_Project/index.html) website.
 
 ## About
 
