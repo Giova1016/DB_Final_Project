@@ -15,12 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Add new Promocion
             $sql = "INSERT INTO Promociones (NegocioId, BebidasId, Descuento) VALUES (?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("iid", $negocioId, $bebidasId, $descuento);
+            $stmt->bind_param("iis", $negocioId, $bebidasId, $descuento);
         } else {
             // Update existing Promocion
             $sql = "UPDATE Promociones SET NegocioId = ?, BebidasId = ?, Descuento = ? WHERE PromocionesId = ?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("iidi", $negocioId, $bebidasId, $descuento, $promocionesId);
+            $stmt->bind_param("iisi", $negocioId, $bebidasId, $descuento, $promocionesId);
         }
 
         if ($stmt->execute()) {
