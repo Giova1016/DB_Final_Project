@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $usuario = null;
 if (isset($_GET['edit'])) {
     $userId = $_GET['edit'];
-    $sql = "SELECT * FROM Usuario WHERE Id = ?";
+    $sql = "SELECT NombreC, FechaNac, Direccion, Email FROM Usuario WHERE Id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $userId);
     $stmt->execute();
