@@ -1,6 +1,6 @@
 # Database Final Project
 
-This project includes the HTML, PHP, and CSS files with the code to the website found in the [csmath.uprm.edu](https://csmath.uprm.edu/~omartg/Databases/index.html) website.
+This project includes the HTML, PHP, and CSS files with the code to the website found in the [csmath.uprm.edu](https://csmath.uprm.edu/~GioRoman/) website.
 
 ## About
 
